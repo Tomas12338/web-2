@@ -74,7 +74,7 @@ header{
     font-size: 0.8rem;
     font-weight: bold;
     cursor: pointer;
-    transition: scale .2 ease;
+    transition: scale 0.2 ease;
 }
 
 .action-btn:hover{
@@ -131,7 +131,7 @@ section#hero{
 }
 
 #hero h1{
-    font-size: rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -159,17 +159,58 @@ section#hero{
 }
 
 
-#searchResults {
+.search-container {
+    position: relative;
+    width: 80%; 
+    max-width: 200px; 
+    margin: 20px auto;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  .search-results {
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 200px; 
+    overflow-y: auto; 
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  #searchResults li {
+  .search-results li {
     border-bottom: 1px solid #ccc;
     padding: 10px;
+    font-size: 14px;
   }
   
-  #searchResults li:last-child {
+  .search-results li:last-child {
     border-bottom: none;
+  }
+  
+  .search-results li:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  /* Responsive style */
+  @media only screen and (max-width: 768px) {
+    .search-container {
+      width: 90%;
+    }
   }
   

@@ -1,6 +1,6 @@
 *{
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: "poppings", sans-serif;
 }
@@ -8,12 +8,12 @@
 
 
 body{
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     background-color: rgb(69, 72, 119);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
 }
 
 .wrapper {
@@ -25,6 +25,9 @@ body{
     color: aliceblue;
     border-radius: 10px;
     padding: 30px 40px;
+    position: relative;
+    margin: 0 auto;
+  
 }
 
 .wrapper h1{
@@ -117,6 +120,8 @@ body{
     text-decoration: underline;
 }
 
+
+
 li{
     list-style: none;
 
@@ -128,3 +133,133 @@ a{
     font-size: 1rem;
 }
 
+a:hover {
+    color: orange;
+}
+ 
+/* Header */
+header{
+    position: relative;
+    padding: 2rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .links{
+     display: flex;
+     gap: 2rem;
+}
+
+.navbar .toggle_btn{
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action-btn{
+    background-color: rgb(245, 0, 0);
+    color: rgb(193, 171, 171);
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action-btn:hover{
+    scale: 1.05;
+    color: white;
+}
+
+.action-btn:active{
+    scale: 0.95;
+}
+
+/* drowdown_menu */
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.dropdown_menu .action-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Hero 2*/
+section#hero{
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+#hero h1{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* responsive design */
+@media (max-width: 995px) {
+    .navbar .links,
+    .navbar .action-btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn{
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+ .dropdown_menu{
+    left: 2rem;
+    width: unset;
+ }
+}
