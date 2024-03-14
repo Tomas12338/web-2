@@ -159,3 +159,17 @@ section#hero{
 }
 
 
+#searchResults {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #searchResults li {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  #searchResults li:last-child {
+    border-bottom: none;
+  }
+  
